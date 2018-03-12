@@ -114,8 +114,20 @@ public class ItemAccountNumberVo {
 	    */
 	   private Integer saleid;
 	   
+	   /**
+	    * 创建人
+	    */
+	   private String createbyName;
 	   
 	   
+
+	public String getCreatebyName() {
+		return createbyName;
+	}
+
+	public void setCreatebyName(String createbyName) {
+		this.createbyName = createbyName;
+	}
 
 	public Integer getSaleid() {
 		return saleid;

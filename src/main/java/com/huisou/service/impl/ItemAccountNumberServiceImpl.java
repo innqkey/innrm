@@ -85,6 +85,8 @@ public class ItemAccountNumberServiceImpl implements ItemAccountNumberService{
 		for (ItemAccountNumberVo itemAccountNumberVo : list) {
 			itemAccountNumberVo.setItemtypename(DictConConstant.getDicName("Itemtype", itemAccountNumberVo.getItemtype()));
 			UrlPo urlPo = urlPoMapper.findUrlPoByid(itemAccountNumberVo.getUrlid());
+			UserPo po=userPoMapper.findOne(itemAccountNumberVo.getCreateby());
+			itemAccountNumberVo.setCreatebyName(po.getPetname());
 			itemAccountNumberVo.setAccountypename(urlPo.getAccountypename());
 		}
 		PageInfo<ItemAccountNumberVo> pageInfo = new PageInfo<>(list);

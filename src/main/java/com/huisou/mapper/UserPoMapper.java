@@ -15,11 +15,13 @@ import java.util.Map;
 public interface UserPoMapper extends MyMapper<UserPo> {
 
     int insertAndBackId(UserPo userPo);
-
+    
+    UserPo findOne(@Param(value = "userid")Integer userid);
+    
     List<UserRoleAuthVo> selectAllUserInfo(Map map);
 
     List<UserPo> selectUserPos(Map map);
-
+    
     List<UserPo> selectAllUserByOrgid(@Param(value = "orgids") List<Integer> orgids);
 
     List<UserPo> selectUserByPostId(@Param(value = "postids") List<Integer> postids);

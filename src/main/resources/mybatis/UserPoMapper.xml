@@ -333,6 +333,10 @@
 		 select * from crm_user where empid = #{empid}
 	</select>
 	
+	<select id="findOne" parameterType="java.lang.Integer" resultType="com.huisou.po.UserPo">
+		select * from crm_user where userid = #{userid}
+	</select>
+	
 	<update id="deletePidByPid" parameterType="java.lang.Integer">
 		UPDATE crm_user SET postid="" WHERE postid=#{postid}
 	</update>
